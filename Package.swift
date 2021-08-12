@@ -18,6 +18,11 @@ let package = Package(
             path: "../swm-core/"
         ),
         .package(
+//            url: "https://github.com/taketo1024/swm-matrix-tools.git",
+//            from: "1.3.0"
+            path: "../swm-matrix-tools/"
+        ),
+        .package(
             url: "https://github.com/attaswift/BigInt.git",
             from: "5.2.1"
         )
@@ -29,6 +34,7 @@ let package = Package(
             name: "SwmxBigInt",
             dependencies: [
                 .product(name: "SwmCore", package: "swm-core"),
+                .product(name: "SwmMatrixTools", package: "swm-matrix-tools"),
                 "BigInt"
             ]),
         .testTarget(

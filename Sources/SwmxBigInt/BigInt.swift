@@ -1,4 +1,5 @@
 import SwmCore
+import SwmMatrixTools
 import BigInt
 
 extension BigInt: EuclideanRing {
@@ -26,13 +27,6 @@ extension BigInt: EuclideanRing {
     public var normalizingUnit: Self {
         (self >= 0) ? 1 : -1
     }
-
-//    @inlinable
-//    public var sign: Int {
-//        (self >  0) ? 1 :
-//        (self == 0) ? 0 :
-//                     -1
-//    }
 
     @inlinable
     public var abs: Self {
@@ -79,5 +73,14 @@ extension BigInt: EuclideanRing {
     
     public static var symbol: String {
         "BigInt"
+    }
+}
+
+extension BigInt: ComputationalEuclideanRing {
+    public typealias ComputationalMatrixImpl = DefaultMatrixImpl<Self>
+    public typealias ComputationalSparseMatrixImpl = DefaultSparseMatrixImpl<Self>
+    
+    public var computationalWeight: Double {
+        Double(self)
     }
 }
