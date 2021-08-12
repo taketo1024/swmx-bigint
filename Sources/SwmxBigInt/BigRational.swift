@@ -7,6 +7,7 @@
 
 import SwmCore
 import SwmMatrixTools
+import SwmHomology
 import BigInt
 
 public struct BigRational: FractionField {
@@ -34,3 +35,5 @@ extension BigRational: ComputationalField {
         isZero ? 0 : Double(max(numerator.abs, denominator))
     }
 }
+
+extension BigRational: HomologyCalculatable{}

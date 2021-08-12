@@ -1,5 +1,6 @@
 import SwmCore
 import SwmMatrixTools
+import SwmHomology
 import BigInt
 
 extension BigInt: EuclideanRing {
@@ -84,3 +85,5 @@ extension BigInt: ComputationalEuclideanRing {
         Double(self)
     }
 }
+
+extension BigInt: HomologyCalculatable{}

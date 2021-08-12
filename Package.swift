@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwmxBigInt",
+    name: "swmx-bigint",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -13,14 +13,19 @@ let package = Package(
     ],
     dependencies: [
         .package(
-//            url: "https://github.com/taketo1024/swm-core.git",
-//            from: "1.2.7"
-            path: "../swm-core/"
+            url: "https://github.com/taketo1024/swm-core.git",
+            from: "1.2.9"
+//            path: "../swm-core/"
         ),
         .package(
-//            url: "https://github.com/taketo1024/swm-matrix-tools.git",
-//            from: "1.3.0"
-            path: "../swm-matrix-tools/"
+            url: "https://github.com/taketo1024/swm-matrix-tools.git",
+            from: "1.3.0"
+//            path: "../swm-matrix-tools/"
+        ),
+        .package(
+            url: "https://github.com/taketo1024/swm-homology.git",
+            from: "1.3.3"
+//            path: "../swm-homology/"
         ),
         .package(
             url: "https://github.com/attaswift/BigInt.git",
@@ -35,6 +40,7 @@ let package = Package(
             dependencies: [
                 .product(name: "SwmCore", package: "swm-core"),
                 .product(name: "SwmMatrixTools", package: "swm-matrix-tools"),
+                .product(name: "SwmHomology", package: "swm-homology"),
                 "BigInt"
             ]),
         .testTarget(
