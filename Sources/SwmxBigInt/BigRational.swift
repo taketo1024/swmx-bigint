@@ -5,10 +5,8 @@
 //  Created by Taketo Sano on 2021/08/12.
 //
 
-import SwmCore
-import SwmMatrixTools
-import SwmHomology
 import BigInt
+import SwmCore
 
 public struct BigRational: FractionField {
     public typealias Base = BigInt
@@ -26,14 +24,3 @@ extension BigRational: Comparable {}
 extension BigRational: Hashable {}
 extension BigRational: Codable {}
 extension BigRational: ExpressibleByIntegerLiteral {}
-
-extension BigRational: ComputationalField {
-    public typealias ComputationalMatrixImpl = DefaultSparseMatrixImpl<Self> // TODO
-    public typealias ComputationalSparseMatrixImpl = DefaultSparseMatrixImpl<Self>
-    
-    public var computationalWeight: Double {
-        isZero ? 0 : Double(max(numerator.abs, denominator))
-    }
-}
-
-extension BigRational: HomologyCalculatable{}

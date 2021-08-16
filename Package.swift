@@ -18,16 +18,6 @@ let package = Package(
 //            path: "../swm-core/"
         ),
         .package(
-            url: "https://github.com/taketo1024/swm-matrix-tools.git",
-            from: "1.3.0"
-//            path: "../swm-matrix-tools/"
-        ),
-        .package(
-            url: "https://github.com/taketo1024/swm-homology.git",
-            from: "1.3.3"
-//            path: "../swm-homology/"
-        ),
-        .package(
             url: "https://github.com/attaswift/BigInt.git",
             from: "5.2.1"
         )
@@ -39,8 +29,6 @@ let package = Package(
             name: "SwmxBigInt",
             dependencies: [
                 .product(name: "SwmCore", package: "swm-core"),
-                .product(name: "SwmMatrixTools", package: "swm-matrix-tools"),
-                .product(name: "SwmHomology", package: "swm-homology"),
                 "BigInt"
             ]),
         .testTarget(

@@ -1,7 +1,5 @@
-import SwmCore
-import SwmMatrixTools
-import SwmHomology
 import BigInt
+import SwmCore
 
 extension BigInt: EuclideanRing {
     @inlinable
@@ -76,14 +74,3 @@ extension BigInt: EuclideanRing {
         "BigInt"
     }
 }
-
-extension BigInt: ComputationalEuclideanRing {
-    public typealias ComputationalMatrixImpl = DefaultMatrixImpl<Self>
-    public typealias ComputationalSparseMatrixImpl = DefaultSparseMatrixImpl<Self>
-    
-    public var computationalWeight: Double {
-        Double(self)
-    }
-}
-
-extension BigInt: HomologyCalculatable{}
